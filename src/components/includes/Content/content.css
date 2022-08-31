@@ -1,22 +1,85 @@
 section{
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 160px);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding-top: 10px;
 
-    padding-top: 30px;
-    border: 1px solid #fff;
 }
 
+section .game-head{
+    transition: all 250ms;
+    height: 60px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px dashed #fff;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+
+    position: relative;
+    text-align: center;
+}
+.game-head .start-text{
+    color: #fff;
+    font-size: 18px;
+}
+
+.game-head-content{
+    height: 100%;
+    width: 100%;
+}
+
+.player-information{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.left-side,.right-side{
+    width: 50%;
+    height: 100%;
+    padding-left: 5px;
+    padding-top: 15px;
+    text-align: center;
+}
+.left-side{
+    position: relative;
+}
+
+.left-side::after{
+    position: absolute;
+    top: 25px;
+    right: -20px;
+    display: inline-block;
+    content: 'VS.';
+    color: #fff;
+    font-size: 20px;
+    font-weight: normal;
+
+}
+.left-side,.right-side p{
+    color: #fff;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.left-side .turn,.right-side .turn{
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+
 section .game-content{
-    width: 600px;
+    width: 450px;
     height: 500px;
 }
 
 section .game-content .online-offline-section{
     height: 30px;
-    width: 600px;
+    width: 450px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -35,8 +98,69 @@ section .game-content .online-offline-section a{
     border: 1px solid #fff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    cursor: pointer;
 }
 
 .active{
     background-color: #168f80;
 }
+
+.game-mode{
+    width: 40px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    left: calc(50% - 15px);
+    text-align: center;
+}
+.game-mode small{
+    color: #fff;
+    font-size: 10px;
+}
+.default-button{
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    background-color: #12bdac;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.start-game{
+    margin: 15px auto;
+    width: 100px;
+    height: 25px;
+}
+
+.shadow{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+input[type="text"]{
+    height: 30px;
+    outline: none;
+    width: 200px;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    padding-left: 10px;
+    text-align: center;
+}
+
+
+.send-request{
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.received-request-button{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+}
+

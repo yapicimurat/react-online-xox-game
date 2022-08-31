@@ -1,30 +1,30 @@
 //
-import { useContext } from "react";
-import { GeneralContext } from "../../../App";
+import clsx from "clsx";
+import {useDispatch, useSelector} from "react-redux";
+import {setGameState, setOnline} from "../../../features/game";
+
+//util file
+import {truncate} from "../../../utils/stringUtil";
+
+
 //components
 import Game from "../../game/Game";
-
+import GameHead from "../../game/GameHead";
 import "./content.css";
 
-function Content(){
-    const val = useContext(GeneralContext);
+
+function Content({content}){
+    const {isOnline, isGameStarted, isGameFinished, boardState, time, turn} = useSelector(state =>  state.gameReducer);
+
+    const dispatch = useDispatch();
 
     return (
         <section>
             <div className="game-content">
-                <div className="online-offline-section">
-                    <a href="#" className="active">
-                        PLAY OFFLINE
-                    </a>
-                    <a href="#">
-                        PLAY ONLINE
-                    </a>
-                </div>
-                <Game/>
+                {content}
             </div>
         </section>
     );
 }
-
 
 export default Content;

@@ -5,13 +5,23 @@ import "../../../style.css";
 //special css
 import "./header.css";
 
-function Header(){
+import {Link} from "react-router-dom";
 
+function Header(){
 
     return (
         <header>
-            <h2>TEK&ÇOK OYUNCULU XOX OYUNU</h2>
-            <small>Oyun türünü seç ve hemen oyuna başla</small>
+            <div className="header-top">
+                <h1> XOX OYUNU</h1>
+            </div>
+            <div className="header-menu">
+                <div>
+                    <Link to="/">ANASAYFA</Link>
+                </div>
+                <div>
+                    <Link to="/invite-friend">ARKADAŞINI DAVET ET</Link>
+                </div>
+            </div>
         </header>
     );
 
